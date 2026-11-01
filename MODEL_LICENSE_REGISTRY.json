@@ -1,0 +1,46 @@
+{
+  "updated_at": "2026-11-01T23:55:00Z",
+  "policy": "Open-Weights & Free Tier Priority",
+  "models": [
+    {
+      "id": "gemini-2.5-flash",
+      "provider": "Google Cloud / GenAI",
+      "type": "Cloud API",
+      "cost_tier": "Free Tier Available (60 RPM / 1000 RPD)",
+      "commercial_use": "Permitted under Terms of Service",
+      "adapter": "@algoyoutube/ai-providers/gemini"
+    },
+    {
+      "id": "llama-3.3-70b-instruct",
+      "provider": "Meta / Local / vLLM",
+      "type": "Open Weights",
+      "cost_tier": "Free / Self-Hosted",
+      "commercial_use": "Llama 3.3 Community License (Permitted < 700M MAU)",
+      "adapter": "@algoyoutube/ai-providers/ollama"
+    },
+    {
+      "id": "mistral-small-24b",
+      "provider": "Mistral AI / Local",
+      "type": "Open Weights",
+      "cost_tier": "Free / Self-Hosted",
+      "commercial_use": "Apache-2.0 Permissive",
+      "adapter": "@algoyoutube/ai-providers/ollama"
+    },
+    {
+      "id": "qwen-2.5-coder-32b",
+      "provider": "Alibaba / Local",
+      "type": "Open Weights",
+      "cost_tier": "Free / Self-Hosted",
+      "commercial_use": "Apache-2.0 Permissive",
+      "adapter": "@algoyoutube/ai-providers/ollama"
+    },
+    {
+      "id": "deepseek-v3",
+      "provider": "DeepSeek / Local / API",
+      "type": "Open Weights",
+      "cost_tier": "Free / Self-Hosted",
+      "commercial_use": "MIT Permissive License",
+      "adapter": "@algoyoutube/ai-providers/openai-compatible"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "algoyoutube-os-monorepo",
+  "version": "1.0.0",
+  "description": "AlgoYouTube OS — Autonomous AI Engineering & Self-Evolving Creator Intelligence Ecosystem",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "engines/*",
+    "connectors/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "node --test tests/index.test.mjs",
+    "dev:api": "node apps/api/src/index.mjs",
+    "dev:web": "node apps/web/server.mjs",
+    "start": "node apps/api/src/index.mjs"
+  },
+  "keywords": [
+    "creator-economy",
+    "youtube-automation",
+    "mcp",
+    "model-context-protocol",
+    "multi-agent",
+    "self-evolving",
+    "open-source"
+  ],
+  "author": "1nsharma (1nsharma-labs)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

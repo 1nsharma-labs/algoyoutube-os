@@ -1,0 +1,27 @@
+name: Security Audit & License Compliance Gate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  security-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run Security Suite
+        run: |
+          node -e "
+            import('./packages/security/src/index.mjs').then(s => {
+              const res = s.validateSafeUrl('http://169.254.169.254');
+              if (res.safe) throw new Error('SSRF check failed: cloud metadata was not blocked!');
+              console.log('SSRF Defense Verified.');
+            });
+          "

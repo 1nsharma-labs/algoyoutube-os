@@ -1,0 +1,34 @@
+name: Daily Technology Research & Discovery
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # Every day at 04:00 UTC
+  workflow_dispatch:
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run Technology Discovery & Benchmark
+        run: |
+          node -e "
+            import('./engines/discovery/src/index.mjs').then(async m => {
+              const res = await m.discoveryEngine.runDailyScan();
+              console.log('Daily Discoveries:', res);
+            });
+          "
+
+      - name: Commit Daily Research Artifacts
+        run: |
+          git config --global user.name "AlgoYouTube AI Evolution Bot"
+          git config --global user.email "bot@algoyoutube.com"
+          git add research/ || true
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore(research): automated daily technology scan [skip ci]"

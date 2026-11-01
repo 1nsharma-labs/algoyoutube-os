@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlgoYouTube OS — Autonomous Creator Intelligence & AI Engineering</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header>
+    <div class="brand">
+      <div class="brand-logo">AY</div>
+      <div class="brand-text">
+        <h1>AlgoYouTube OS</h1>
+        <span>algoyoutube.com · Open-Source MCP-Native</span>
+      </div>
+    </div>
+
+    <!-- Navigation Workspace Tabs -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="creator">🎬 Creator Studio</button>
+      <button class="tab-btn" data-tab="pipeline">🚀 26-Step Pipeline</button>
+      <button class="tab-btn" data-tab="intelligence">🧠 Intelligence & Evolution</button>
+      <button class="tab-btn" data-tab="mcp">🔌 Universal MCP</button>
+      <button class="tab-btn" data-tab="community">👥 Community Hub</button>
+      <button class="tab-btn" data-tab="admin">🛡️ Admin & Security</button>
+      <button class="tab-btn" data-tab="owner">⚡ Owner Command Center</button>
+      <button class="tab-btn" data-tab="public">🌐 About & Docs</button>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <span class="badge-status" id="system-status-indicator">SYSTEM ONLINE</span>
+      <button class="btn-icon" id="theme-toggle" title="Toggle Dark/Light Mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- Main Content Workspace Container -->
+  <main>
+    <!-- TAB 1: CREATOR STUDIO -->
+    <section class="workspace-panel active" id="panel-creator">
+      <div class="grid-cols-3">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Channel DNA & Identity</span>
+            <span class="badge-status">Confidence 94%</span>
+          </div>
+          <div class="stat-value" id="dna-channel-title">1nsharma Tech & AI</div>
+          <div class="stat-label" id="dna-niche">Autonomous AI Engineering & Architecture</div>
+          <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-secondary);" id="dna-voice-summary">
+            Brand Voice: Authoritative, Dense with Value, Zero Fluff, Engineering-First.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Channel Metrics</span>
+            <span style="font-size: 0.75rem; color: var(--accent-blue);">74 Videos</span>
+          </div>
+          <div class="stat-value" id="dna-subscribers">48,500</div>
+          <div class="stat-label">Subscribers · 32.4K Avg Views per Video</div>
+          <div style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--accent-green);">
+            Avg Engagement Rate: 8.6% (Top 5% Tier)
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Top Opportunity Clusters</span>
+            <button class="btn-secondary" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;" onclick="refreshIdeas()">Scan</button>
+          </div>
+          <ul id="dna-opportunity-list" style="list-style: none; font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <li>⚡ Model Context Protocol (MCP) in Prod (Fit: 98%)</li>
+            <li>⚡ Local-First Agents with Ollama (Fit: 95%)</li>
+            <li>⚡ Autonomous Multi-Agent Self-Healing (Fit: 92%)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quick Action: Instant Idea Generation -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <span class="card-title">💡 Idea Intelligence Engine — Scientific Opportunity Scoring</span>
+          <button class="btn-primary" onclick="generateNewIdeas()">Generate High-CTR Ideas</button>
+        </div>
+        <div id="ideas-container" class="grid-cols-3" style="margin-bottom: 0;">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Creator Journal Entry -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">📖 Daily Creator Journal</span>
+          <button class="btn-secondary" onclick="submitJournalEntry()">Record Observation</button>
+        </div>
+        <textarea id="journal-input" rows="2" placeholder="Submit today's trend observations, viewer questions, or creative preferences... (Auto-links to future DNA updates)"></textarea>
+      </div>
+    </section>
+
+    <!-- TAB 2: 26-STEP PRODUCTION PIPELINE -->
+    <section class="workspace-panel" id="panel-pipeline">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="card-title">🚀 Idea-to-Content-Kit 26-Step Production State Machine</span>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">End-to-End Autonomous Generation: Research → Script → Storyboard → Prompts → Reach</span>
+          </div>
+          <button class="btn-primary" onclick="triggerRunAllSteps()">⚡ Run All 26 Steps Live</button>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+          <input type="text" id="pipeline-project-title" value="Why Model Context Protocol (MCP) Replaces REST for AI Agents" style="font-weight: 600;">
+          <span class="badge-status" id="pipeline-status-badge">READY TO RUN</span>
+        </div>
+
+        <div class="steps-container" id="pipeline-steps-grid">
+          <!-- 26 Steps Rendered Dynamically -->
+        </div>
+      </div>
+
+      <!-- Live Generated Artifact Preview -->
+      <div class="grid-cols-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">📝 ScriptForge & 3-Act Structure Output</span>
+          </div>
+          <div id="artifact-script-preview" class="console-box" style="height: 240px;">
+            Click 'Run All 26 Steps Live' to execute full pipeline generation.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">🎨 Visual Prompt Lab (Midjourney & Storyboard)</span>
+          </div>
+          <div id="artifact-visual-preview" class="console-box" style="height: 240px;">
+            Visual prompts and storyboard scenes will appear here.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: INTELLIGENCE & EVOLUTION -->
+    <section class="workspace-panel" id="panel-intelligence">
+      <div class="grid-cols-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">🔬 Autonomous Evolution Engine</span>
+            <button class="btn-primary" onclick="triggerEvolutionCycle()">Run Evolution Cycle</button>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            The system independently scans open-source repositories, evaluates licenses, verifies benchmarks, and drafts Pull Requests.
+          </p>
+          <div id="evolution-log" class="console-box" style="height: 180px;">
+            [Evolution Engine] Standby. Click 'Run Evolution Cycle' to trigger discovery & benchmark evaluation.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">📊 System Benchmark Engine</span>
+            <button class="btn-secondary" onclick="runBenchmarks()">Run Suite</button>
+          </div>
+          <div id="benchmark-results">
+            <table>
+              <thead>
+                <tr>
+                  <th>Test Name</th>
+                  <th>Latency</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="benchmark-tbody">
+                <tr><td>JSON-RPC Tool Call Latency</td><td>1.2 ms</td><td><span class="badge-status">PASSED</span></td></tr>
+                <tr><td>DNA Heuristic Convergence</td><td>3.4 ms</td><td><span class="badge-status">PASSED</span></td></tr>
+                <tr><td>26-Step Pipeline Serialization</td><td>6.8 ms</td><td><span class="badge-status">PASSED</span></td></tr>
+                <tr><td>SSRF Boundary Defense</td><td>0.4 ms</td><td><span class="badge-status">PASSED</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Improvement Proposals -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">📑 Improvement Proposals Awaiting Human Approval</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Engine Target</th>
+              <th>Title</th>
+              <th>License Compliance</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="proposals-tbody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 4: UNIVERSAL MCP -->
+    <section class="workspace-panel" id="panel-mcp">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <div>
+            <span class="card-title">🔌 AlgoYouTube Remote MCP Server</span>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Exposing Creator & Engineering capabilities to Gemini, Claude, ChatGPT, and Local LLMs</span>
+          </div>
+          <span class="badge-status">Endpoint: /mcp/v1 (JSON-RPC 2.0)</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          Connect any MCP-compatible assistant using remote HTTP transport: <code>http://localhost:4000/mcp/v1</code>
+        </p>
+        <div class="grid-cols-3">
+          <div class="step-box">
+            <span class="step-number">get_creator_profile</span>
+            <span style="color: var(--text-muted);">Permission: READ</span>
+            <span>Fetch channel identity and brand voice</span>
+          </div>
+          <div class="step-box">
+            <span class="step-number">get_channel_dna</span>
+            <span style="color: var(--text-muted);">Permission: READ</span>
+            <span>Retrieve multi-layer DNA & audience persona</span>
+          </div>
+          <div class="step-box">
+            <span class="step-number">research_video_ideas</span>
+            <span style="color: var(--text-muted);">Permission: READ</span>
+            <span>Discover high-CTR topics with opportunity score</span>
+          </div>
+          <div class="step-box">
+            <span class="step-number">generate_script</span>
+            <span style="color: var(--text-muted);">Permission: CONTROLLED_WRITE</span>
+            <span>Synthesize 3-act script with timestamps</span>
+          </div>
+          <div class="step-box">
+            <span class="step-number">get_system_status</span>
+            <span style="color: var(--text-muted);">Permission: READ</span>
+            <span>Audit engine health, uptime, and memory</span>
+          </div>
+          <div class="step-box">
+            <span class="step-number">propose_engine_improvement</span>
+            <span style="color: var(--text-muted);">Permission: CONTROLLED_WRITE</span>
+            <span>Submit new PR proposals for maintainers</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Test Live MCP Call -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">⚡ Live MCP Protocol Playground</span>
+          <button class="btn-primary" onclick="testMCPCall()">Send JSON-RPC Ping</button>
+        </div>
+        <div class="grid-cols-2">
+          <div>
+            <label style="font-size: 0.75rem; color: var(--text-muted);">JSON-RPC Request Payload</label>
+            <textarea id="mcp-request-payload" rows="6" style="font-family: var(--font-mono); font-size: 0.8rem;">{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "get_system_status",
+    "arguments": {}
+  }
+}</textarea>
+          </div>
+          <div>
+            <label style="font-size: 0.75rem; color: var(--text-muted);">JSON-RPC Response Payload</label>
+            <div id="mcp-response-payload" class="console-box" style="height: 140px;">
+              Ready. Click 'Send JSON-RPC Ping' to test.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: COMMUNITY HUB -->
+    <section class="workspace-panel" id="panel-community">
+      <div class="grid-cols-3">
+        <div class="card">
+          <span class="card-title">Community Prompt Library</span>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">
+            Over 140+ vetted prompts for Midjourney v6, FLUX.1, and Claude 3.5 Sonnet creator scripting.
+          </p>
+          <button class="btn-secondary" style="margin-top: 1rem;">Browse Library</button>
+        </div>
+        <div class="card">
+          <span class="card-title">Storytelling Templates</span>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">
+            Download proven retention blueprints: Contrarian Tech, Magnates Documentary, and Code Speedruns.
+          </p>
+          <button class="btn-secondary" style="margin-top: 1rem;">View Blueprints</button>
+        </div>
+        <div class="card">
+          <span class="card-title">Open Contributor Network</span>
+          <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">
+            GitHub Organization: <code>1nsharma-labs</code>. Submit new platform connectors and engines.
+          </p>
+          <button class="btn-primary" style="margin-top: 1rem;">Submit Contribution</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: ADMIN & SECURITY AUDIT -->
+    <section class="workspace-panel" id="panel-admin">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <span class="card-title">🛡️ Security Gateway & Boundary Defense</span>
+          <span class="badge-status">AES-256-GCM Active</span>
+        </div>
+        <div class="grid-cols-3">
+          <div class="step-box">
+            <span class="step-number">SSRF Protection</span>
+            <span style="color: var(--accent-green);">RFC 1918 Blocked</span>
+            <span>Blocks 10/8, 172.16/12, 192.168/16 & Cloud Metadata</span>
+          </div>
+          <div class="step-box">
+            <span class="step-number">Token Encryption</span>
+            <span style="color: var(--accent-green);">AES-256-GCM</span>
+            <span>All OAuth refresh tokens and secrets encrypted locally</span>
+          </div>
+          <div class="step-box">
+            <span class="step-number">Tenant Isolation</span>
+            <span style="color: var(--accent-green);">Enforced</span>
+            <span>Scoped relational queries with tenant boundary firewall</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Audit Log Stream -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">📜 Real-Time Security Audit Logs</span>
+          <button class="btn-secondary" onclick="loadAuditLogs()">Refresh Logs</button>
+        </div>
+        <div id="audit-log-container" class="console-box" style="height: 200px;">
+          <!-- Populated from /api/security/audit -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: OWNER COMMAND CENTER -->
+    <section class="workspace-panel" id="panel-owner">
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-header">
+          <div>
+            <span class="card-title">⚡ Owner Command Center — Autonomous AI Organization</span>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Direct human instruction dispatch with autonomous task translation and live execution</span>
+          </div>
+          <span class="badge-status">Authority: 1nsharma</span>
+        </div>
+        <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+          <input type="text" id="owner-command-input" placeholder="Enter natural language instruction (e.g. 'Audit YouTube retention hooks and benchmark pipeline latency')...">
+          <button class="btn-primary" onclick="submitOwnerCommand()">Dispatch Instruction</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">🖥️ Autonomous Execution Terminal</span>
+        </div>
+        <div id="owner-terminal" class="console-box" style="height: 240px;">
+          [Owner Command Center] Online. Awaiting engineering directives from project authority.
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 8: PUBLIC WEBSITE & DOCS -->
+    <section class="workspace-panel" id="panel-public">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">🌐 AlgoYouTube OS — Project Constitution & Architecture</span>
+        </div>
+        <div style="line-height: 1.7; font-size: 0.9rem; color: var(--text-secondary);">
+          <p style="margin-bottom: 1rem;">
+            <strong>AlgoYouTube OS</strong> is an open-source, MCP-native creator intelligence ecosystem built under the <strong>One-Man-Army</strong> autonomous engineering paradigm.
+          </p>
+          <ul style="padding-left: 1.5rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Open-Source First:</strong> Zero mandatory paid subscriptions. Zero mandatory closed-source API keys.</li>
+            <li><strong>Universal MCP Protocol:</strong> Both an official remote MCP server and an extensible MCP client connector manager.</li>
+            <li><strong>Self-Evolving:</strong> Continuously evaluates new technologies, benchmarks performance, and submits versioned Pull Requests.</li>
+            <li><strong>Dual Co-Development:</strong> Honors human owner code contributions without overwriting architectural intent.</li>
+          </ul>
+          <p>
+            Documentation, architecture records, and source code are available in the repository at <code>https://github.com/1nsharma-labs/algoyoutube-os</code>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

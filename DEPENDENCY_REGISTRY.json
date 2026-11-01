@@ -1,0 +1,16 @@
+{
+  "updated_at": "2026-11-01T23:55:00Z",
+  "audit_status": "APPROVED",
+  "dependencies": {
+    "runtime": {
+      "zod": { "license": "MIT", "verified": true, "cost": "FREE" },
+      "express": { "license": "MIT", "verified": true, "cost": "FREE" },
+      "cors": { "license": "MIT", "verified": true, "cost": "FREE" },
+      "dotenv": { "license": "BSD-2-Clause", "verified": true, "cost": "FREE" }
+    },
+    "development": {
+      "typescript": { "license": "Apache-2.0", "verified": true, "cost": "FREE" },
+      "tsx": { "license": "MIT", "verified": true, "cost": "FREE" }
+    }
+  }
+}

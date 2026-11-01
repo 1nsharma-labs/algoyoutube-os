@@ -1,0 +1,7 @@
+{
+  "name": "@algoyoutube/engine-technology-selection",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.mjs",
+  "license": "MIT"
+}

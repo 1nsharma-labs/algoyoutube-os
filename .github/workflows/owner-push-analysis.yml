@@ -1,0 +1,31 @@
+name: Owner Push Analysis & Two-Way Co-Development
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+      - 'engine/**'
+
+jobs:
+  analyze-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run Test Suite
+        run: |
+          node --test tests/index.test.mjs
+
+      - name: Analyze Commit Changes
+        run: |
+          echo "Analyzing recent commit for architectural impact..."
+          git log -1 --stat

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "template_contrarian_architect",
+    "name": "The Contrarian Architect",
+    "retention_profile": "High initial hook with tension loop",
+    "pacing": "3-Act with visual split every 4 seconds",
+    "ideal_for": "Technical tutorials, open-source comparisons, systems design"
+  },
+  {
+    "id": "template_deep_dive_doc",
+    "name": "The Deep-Dive Documentary",
+    "retention_profile": "Gradual buildup with chapter milestones",
+    "pacing": "Narrative with historical context and live code payoff",
+    "ideal_for": "Ecosystem evolutions, post-mortems, protocol breakdowns"
+  }
+]

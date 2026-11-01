@@ -1,0 +1,9 @@
+{
+  "id": "tech_mcp_ts_sdk",
+  "name": "Model Context Protocol TypeScript SDK",
+  "repository": "https://github.com/modelcontextprotocol/typescript-sdk",
+  "category": "Protocol Standard",
+  "license": "MIT",
+  "costTier": "FREE",
+  "compatibilityVerdict": "NATIVE_COMPATIBLE"
+}

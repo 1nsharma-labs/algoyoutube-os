@@ -1,0 +1,19 @@
+{
+  "id": "plat_openalex",
+  "name": "OpenAlex Scholarly Knowledge Graph",
+  "category": "Research Platform",
+  "officialUrl": "https://openalex.org",
+  "documentationUrl": "https://docs.openalex.org",
+  "apiAvailability": true,
+  "mcpAvailability": false,
+  "authType": "None / Polite Email Header",
+  "freeTierStatus": "100,000 requests / day free",
+  "rateLimits": "100k requests/day",
+  "license": "CC0 Public Domain Dedication",
+  "securityStatus": "VERIFIED_SAFE",
+  "supportedOperations": [
+    "search_works",
+    "search_authors",
+    "citation_graph_query"
+  ]
+}

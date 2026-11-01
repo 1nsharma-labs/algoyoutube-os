@@ -1,0 +1,19 @@
+{
+  "id": "plat_ollama",
+  "name": "Ollama (Local LLM Runtime)",
+  "category": "Local AI Runtime",
+  "officialUrl": "https://ollama.com",
+  "documentationUrl": "https://github.com/ollama/ollama/blob/main/docs/api.md",
+  "apiAvailability": true,
+  "mcpAvailability": true,
+  "authType": "None (Localhost Loopback)",
+  "freeTierStatus": "100% Free & Unlimited Self-Hosted",
+  "rateLimits": "Hardware-bound",
+  "license": "MIT Permissive",
+  "securityStatus": "VERIFIED_SAFE",
+  "supportedOperations": [
+    "local_inference",
+    "embeddings",
+    "function_calling"
+  ]
+}

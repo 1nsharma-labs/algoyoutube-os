@@ -1,0 +1,11 @@
+{
+  "benchmark_suite_version": "1.0.0",
+  "baseline_metrics": {
+    "mcp_json_rpc_call_latency_ms": 1.2,
+    "dna_calculation_latency_ms": 3.4,
+    "pipeline_26_step_latency_ms": 6.8,
+    "ssrf_boundary_check_latency_ms": 0.4
+  },
+  "verified_on": "2026-11-02",
+  "hardware": "Windows 11 x64 Intel/AMD"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "plat_gemini",
+  "name": "Google Gemini AI",
+  "category": "AI Platform",
+  "officialUrl": "https://ai.google.dev",
+  "documentationUrl": "https://ai.google.dev/gemini-api/docs",
+  "apiAvailability": true,
+  "mcpAvailability": true,
+  "authType": "API Key (Free Tier)",
+  "freeTierStatus": "15 RPM / 1M TPM / 1500 RPD free",
+  "rateLimits": "15 RPM (free tier)",
+  "license": "Free API Tier with Commercial Rights",
+  "securityStatus": "VERIFIED_SAFE",
+  "supportedOperations": [
+    "text_generation",
+    "function_calling",
+    "multimodal_analysis"
+  ]
+}

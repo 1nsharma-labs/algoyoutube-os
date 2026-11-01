@@ -1,0 +1,20 @@
+{
+  "id": "plat_youtube",
+  "name": "YouTube",
+  "category": "Creator Platform",
+  "officialUrl": "https://youtube.com",
+  "documentationUrl": "https://developers.google.com/youtube/v3",
+  "apiAvailability": true,
+  "mcpAvailability": true,
+  "authType": "OAuth 2.0 (PKCE)",
+  "freeTierStatus": "10,000 quota units / day free",
+  "rateLimits": "10,000 units/day",
+  "license": "Proprietary API with Free Developer Tier",
+  "securityStatus": "VERIFIED_SAFE",
+  "supportedOperations": [
+    "read_channel_stats",
+    "read_video_metadata",
+    "upload_video_draft",
+    "sync_comments"
+  ]
+}

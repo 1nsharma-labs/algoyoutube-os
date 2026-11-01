@@ -1,0 +1,17 @@
+{
+  "name": "Autonomous SDLC Loop",
+  "trigger": "Continuous / Owner Command",
+  "sequence": [
+    "INSPECT",
+    "RESEARCH",
+    "UNDERSTAND",
+    "ARCHITECT",
+    "BUILD",
+    "INTEGRATE",
+    "TEST",
+    "VERIFY",
+    "DOCUMENT",
+    "OPERATE",
+    "IMPROVE"
+  ]
+}

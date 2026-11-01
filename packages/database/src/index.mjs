@@ -146,6 +146,14 @@ class AlgoYouTubeDatabase {
     return prop;
   }
 
+  approveProposal(id) {
+    const prop = this.improvementProposals.get(id);
+    if (!prop) return null;
+    prop.status = 'APPROVED_BY_OWNER';
+    prop.updatedAt = new Date().toISOString();
+    return prop;
+  }
+
   // --- Creator Daily Journal ---
   addJournalEntry(creatorId, entry) {
     const id = `journal_${Date.now()}`;

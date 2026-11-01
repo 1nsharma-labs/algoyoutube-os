@@ -1,0 +1,23 @@
+[
+  {
+    "repo": "modelcontextprotocol/typescript-sdk",
+    "stars": 4200,
+    "license": "MIT",
+    "relevance": "CRITICAL",
+    "status": "INTEGRATED"
+  },
+  {
+    "repo": "ollama/ollama",
+    "stars": 98000,
+    "license": "MIT",
+    "relevance": "HIGH",
+    "status": "INTEGRATED"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V3",
+    "stars": 34000,
+    "license": "MIT",
+    "relevance": "HIGH",
+    "status": "EVALUATING"
+  }
+]

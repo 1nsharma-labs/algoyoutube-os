@@ -97,6 +97,26 @@ const server = http.createServer(async (req, res) => {
       return sendJSON(res, 200, report);
     }
 
+    if (path === '/api/creator/journal' && method === 'GET') {
+      const entries = db.getJournalEntries('creator_1nsharma');
+      return sendJSON(res, 200, entries);
+    }
+
+    if (path === '/api/creator/journal' && method === 'POST') {
+      const body = await parseBody(req);
+      const entry = db.addJournalEntry('creator_1nsharma', {
+        observation: body.observation || body.text || '',
+        tags: body.tags || ['creator-observation']
+      });
+      auditLogger.log({
+        tenantId,
+        actor: 'creator_1nsharma',
+        action: 'add_journal_entry',
+        details: { id: entry.id }
+      });
+      return sendJSON(res, 201, entry);
+    }
+
     // 4. IDEA INTELLIGENCE
     if (path === '/api/ideas/generate' && method === 'POST') {
       const body = await parseBody(req);
@@ -163,6 +183,17 @@ const server = http.createServer(async (req, res) => {
       return sendJSON(res, 200, db.listPlatforms());
     }
 
+    if (path === '/api/connectors' && method === 'GET') {
+      return sendJSON(res, 200, [
+        { id: 'youtube', name: 'YouTube Data API v3', status: 'ACTIVE', auth: 'OAuth 2.0 PKCE' },
+        { id: 'github', name: 'GitHub Platform API', status: 'ACTIVE', auth: 'Token / App' },
+        { id: 'research', name: 'OpenAlex & arXiv', status: 'ACTIVE', auth: 'Public Access' },
+        { id: 'google', name: 'Google Trends & Drive', status: 'ACTIVE', auth: 'API Key / Public' },
+        { id: 'social', name: 'Social Sentiment Aggregator', status: 'ACTIVE', auth: 'Public RSS' },
+        { id: 'media', name: 'Media Toolchain (FFmpeg/Whisper)', status: 'ACTIVE', auth: 'Local CLI' }
+      ]);
+    }
+
     if (path === '/api/mcp/servers' && method === 'GET') {
       return sendJSON(res, 200, mcpClientManager.listServers());
     }
@@ -175,6 +206,20 @@ const server = http.createServer(async (req, res) => {
 
     if (path === '/api/evolution/proposals' && method === 'GET') {
       return sendJSON(res, 200, db.listImprovementProposals());
+    }
+
+    const approveMatch = path.match(/^\/api\/evolution\/proposals\/([^/]+)\/approve$/);
+    if (approveMatch && method === 'POST') {
+      const proposalId = approveMatch[1];
+      const approved = db.approveProposal(proposalId);
+      if (!approved) return sendJSON(res, 404, { error: 'Proposal not found' });
+      auditLogger.log({
+        tenantId,
+        actor: 'owner_1nsharma',
+        action: 'approve_evolution_proposal',
+        details: { proposalId }
+      });
+      return sendJSON(res, 200, { success: true, proposal: approved });
     }
 
     if (path === '/api/benchmarks' && method === 'GET') {

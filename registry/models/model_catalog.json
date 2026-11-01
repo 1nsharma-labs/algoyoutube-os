@@ -1,0 +1,26 @@
+{
+  "updated_at": "2026-11-02T00:20:00Z",
+  "catalog": [
+    {
+      "model_id": "gemini-2.5-flash",
+      "provider": "Google Cloud",
+      "type": "Cloud API (Free Tier)",
+      "context_window": 1048576,
+      "recommended_use": "Fast multimodal ideation, script synthesis"
+    },
+    {
+      "model_id": "qwen2.5-coder:7b",
+      "provider": "Ollama / Local",
+      "type": "Open Weights",
+      "context_window": 32768,
+      "recommended_use": "Local offline code parsing, AST inspection"
+    },
+    {
+      "model_id": "deepseek-v3",
+      "provider": "vLLM / Open Source",
+      "type": "Open Weights (MIT)",
+      "context_window": 131072,
+      "recommended_use": "Deep architectural reasoning, code evolution"
+    }
+  ]
+}

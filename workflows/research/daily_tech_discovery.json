@@ -1,0 +1,11 @@
+{
+  "name": "Daily Technology Discovery Workflow",
+  "schedule": "0 4 * * *",
+  "stages": [
+    "Scan GitHub Trending AI repositories",
+    "Query Hugging Face Hub for new open-weight models",
+    "Evaluate license compliance (OSI approved)",
+    "Run sandbox benchmark",
+    "Generate improvement proposals for human maintainer"
+  ]
+}

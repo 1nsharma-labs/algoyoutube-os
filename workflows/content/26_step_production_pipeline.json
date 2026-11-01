@@ -1,0 +1,32 @@
+{
+  "name": "Idea-to-Content-Kit 26-Step Production Pipeline",
+  "engine": "@algoyoutube/workflow-sdk",
+  "steps": [
+    { "step": 1, "id": "research_report", "engine": "idea-intelligence" },
+    { "step": 2, "id": "verified_references", "engine": "discovery" },
+    { "step": 3, "id": "topic_opportunity_analysis", "engine": "idea-intelligence" },
+    { "step": 4, "id": "audience_fit_analysis", "engine": "dna" },
+    { "step": 5, "id": "title_variations", "engine": "reach" },
+    { "step": 6, "id": "seo_description", "engine": "reach" },
+    { "step": 7, "id": "keywords", "engine": "reach" },
+    { "step": 8, "id": "story_map", "engine": "scriptforge" },
+    { "step": 9, "id": "full_script", "engine": "scriptforge" },
+    { "step": 10, "id": "timestamped_narration", "engine": "scriptforge" },
+    { "step": 11, "id": "storyboard", "engine": "visual-lab" },
+    { "step": 12, "id": "thumbnail_concepts", "engine": "visual-lab" },
+    { "step": 13, "id": "image_generation_prompts", "engine": "visual-lab" },
+    { "step": 14, "id": "b_roll_prompts", "engine": "visual-lab" },
+    { "step": 15, "id": "voiceover_direction", "engine": "scriptforge" },
+    { "step": 16, "id": "subtitle_instructions", "engine": "toolchain" },
+    { "step": 17, "id": "editing_timeline", "engine": "toolchain" },
+    { "step": 18, "id": "motion_graphics", "engine": "visual-lab" },
+    { "step": 19, "id": "sound_design", "engine": "toolchain" },
+    { "step": 20, "id": "branding_application", "engine": "dna" },
+    { "step": 21, "id": "shorts_extraction", "engine": "reach" },
+    { "step": 22, "id": "social_distribution_assets", "engine": "reach" },
+    { "step": 23, "id": "community_posts", "engine": "reach" },
+    { "step": 24, "id": "resource_links", "engine": "discovery" },
+    { "step": 25, "id": "publishing_checklist", "engine": "reach" },
+    { "step": 26, "id": "performance_tracking_plan", "engine": "dna" }
+  ]
+}

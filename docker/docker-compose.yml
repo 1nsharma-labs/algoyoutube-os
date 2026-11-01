@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  algoyoutube-os:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - WEB_PORT=3000
+      - API_URL=http://127.0.0.1:4000
+      - ALGOYOUTUBE_MASTER_SECRET=algoyoutube-master-offline-key-change-in-prod
+    restart: unless-stopped

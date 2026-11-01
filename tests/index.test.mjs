@@ -208,3 +208,46 @@ test('Benchmark Engine: Latency and regression benchmarks pass', async () => {
   assert.equal(bench.overallVerdict, 'ALL_BENCHMARKS_SATISFIED');
   assert.ok(bench.benchmarks.every(b => b.status === 'PASSED'));
 });
+
+// --------------------------------------------------------------------------
+// 7. EXPANDED CONNECTORS & UI SUITE
+// --------------------------------------------------------------------------
+test('Connectors: Google Trends connector telemetry', async () => {
+  const { googleConnector } = await import('../connectors/google/src/index.mjs');
+  const trends = await googleConnector.getSearchTrendIndex('Model Context Protocol');
+  assert.equal(trends.keyword, 'Model Context Protocol');
+  assert.ok(trends.searchIndex > 0);
+  assert.ok(trends.topRelatedQueries.length > 0);
+});
+
+test('Connectors: Social Sentiment aggregator', async () => {
+  const { socialConnector } = await import('../connectors/social/src/index.mjs');
+  const sentiment = await socialConnector.getTopicSentiment('MCP Agents');
+  assert.equal(sentiment.topic, 'MCP Agents');
+  assert.ok(sentiment.sentimentScore > 0);
+  assert.ok(sentiment.activeCommunities.length > 0);
+});
+
+test('Connectors: Media Toolchain CLI detection', async () => {
+  const { mediaConnector } = await import('../connectors/media/src/index.mjs');
+  const tools = mediaConnector.detectAvailableTools();
+  assert.ok(tools.ffmpeg.detected);
+  assert.ok(tools.whisper.detected);
+});
+
+test('UI Package: Design Tokens and Badge renderer', async () => {
+  const { colors, typography, renderBadge } = await import('../packages/ui/src/index.mjs');
+  assert.ok(colors.accentBlue);
+  assert.ok(typography.fontFamilySans);
+  assert.equal(renderBadge('ONLINE'), '<span class="badge-status badge-success">ONLINE</span>');
+});
+
+test('Database: Proposal Approval and Journal additions', () => {
+  const entry = db.addJournalEntry('creator_1nsharma', { observation: 'Test observation', tags: ['audit'] });
+  assert.ok(entry.id);
+  assert.equal(entry.creatorId, 'creator_1nsharma');
+
+  const approved = db.approveProposal('prop_001');
+  assert.ok(approved);
+  assert.equal(approved.status, 'APPROVED_BY_OWNER');
+});

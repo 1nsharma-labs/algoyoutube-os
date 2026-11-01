@@ -1,0 +1,20 @@
+{
+  "id": "plat_github",
+  "name": "GitHub",
+  "category": "Developer Platform",
+  "officialUrl": "https://github.com",
+  "documentationUrl": "https://docs.github.com/en/rest",
+  "apiAvailability": true,
+  "mcpAvailability": true,
+  "authType": "Personal Access Token / GitHub App",
+  "freeTierStatus": "5,000 requests / hour free",
+  "rateLimits": "5,000 req/hr",
+  "license": "Open-Source friendly REST & GraphQL",
+  "securityStatus": "VERIFIED_SAFE",
+  "supportedOperations": [
+    "read_commits",
+    "create_pr",
+    "sync_issues",
+    "inspect_repo"
+  ]
+}

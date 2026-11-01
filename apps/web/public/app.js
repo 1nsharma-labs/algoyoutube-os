@@ -261,8 +261,17 @@ async function loadProposals() {
   }
 }
 
-function approveProposal(id) {
-  alert(`Proposal ${id} approved by Owner (1nsharma). Automated sandbox test passed.`);
+async function approveProposal(id) {
+  try {
+    const res = await fetch(`/api/evolution/proposals/${id}/approve`, { method: 'POST' });
+    const data = await res.json();
+    if (data.success) {
+      await loadProposals();
+      await loadAuditLogs();
+    }
+  } catch (err) {
+    console.error('Failed to approve proposal:', err);
+  }
 }
 
 // Test Live MCP Call
@@ -314,8 +323,25 @@ async function submitJournalEntry() {
   const input = document.getElementById('journal-input');
   const val = input.value.trim();
   if (!val) return;
-  alert('Observation saved to Creator Memory! Dynamic DNA Engine will factor this into upcoming ideation scoring.');
-  input.value = '';
+
+  try {
+    const res = await fetch('/api/creator/journal', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ observation: val, tags: ['creator-observation'] })
+    });
+    if (res.ok) {
+      input.value = '';
+      await loadAuditLogs();
+      const badge = document.getElementById('system-status-indicator');
+      const originalText = badge.textContent;
+      badge.textContent = 'JOURNAL RECORDED';
+      badge.style.color = 'var(--accent-green)';
+      setTimeout(() => { badge.textContent = originalText; }, 3000);
+    }
+  } catch (err) {
+    console.error('Failed to save journal observation:', err);
+  }
 }
 
 // Load Audit Logs

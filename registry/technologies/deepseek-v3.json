@@ -1,0 +1,9 @@
+{
+  "id": "tech_deepseek_v3",
+  "name": "DeepSeek-V3",
+  "repository": "https://github.com/deepseek-ai/DeepSeek-V3",
+  "category": "Open Weight Model",
+  "license": "MIT Permissive",
+  "costTier": "FREE_SELF_HOSTED",
+  "compatibilityVerdict": "VLLM_OLLAMA_COMPATIBLE"
+}

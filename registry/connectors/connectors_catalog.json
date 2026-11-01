@@ -1,0 +1,35 @@
+{
+  "updated_at": "2026-11-02T00:20:00Z",
+  "connectors": [
+    {
+      "id": "youtube_v3",
+      "package": "@algoyoutube/connector-youtube",
+      "status": "VERIFIED_ACTIVE",
+      "auth": "OAuth 2.0 PKCE / API Key"
+    },
+    {
+      "id": "github_rest",
+      "package": "@algoyoutube/connector-github",
+      "status": "VERIFIED_ACTIVE",
+      "auth": "Personal Access Token / App"
+    },
+    {
+      "id": "open_research",
+      "package": "@algoyoutube/connector-research",
+      "status": "VERIFIED_ACTIVE",
+      "auth": "None / Public Access"
+    },
+    {
+      "id": "google_trends",
+      "package": "@algoyoutube/connector-google",
+      "status": "SCAFFOLDED",
+      "auth": "API Key / Public Trends"
+    },
+    {
+      "id": "media_toolchain",
+      "package": "@algoyoutube/connector-media",
+      "status": "SCAFFOLDED",
+      "auth": "Local CLI"
+    }
+  ]
+}

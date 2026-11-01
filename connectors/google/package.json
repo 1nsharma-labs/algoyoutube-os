@@ -1,0 +1,7 @@
+{
+  "name": "@algoyoutube/connector-google",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.mjs",
+  "license": "MIT"
+}
